@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import SnakeDetail from "./SnakeDetail";
 
 function SnakeList() {
   const [snakelist, setSnakelist] = useState([]);
@@ -12,12 +13,21 @@ function SnakeList() {
   }, []);
 
   const snakes = snakelist.map((snake) => {
-    return <h3 key={snake.name}>{snake.name}</h3>;
+    return (
+      <div>
+        <h3 key={snake.name}>{snake.name}</h3>
+      </div>
+    );
   });
+
+  const handleClick = () => {
+    return <SnakeDetail snakes={snakes} />;
+  };
 
   return (
     <div>
-      <ul>{snakes}</ul>
+      <h3>{snakes}</h3>
+      <SnakeDetail snakes={snakes} />
     </div>
   );
 }
