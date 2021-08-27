@@ -15,19 +15,18 @@ function SnakeList() {
   const snakes = snakelist.map((snake) => {
     return (
       <div>
-        <h3 key={snake.name}>{snake.name}</h3>
+        <h3 key={snake.id}>{snake.name}</h3>
       </div>
     );
   });
 
-  const handleClick = () => {
-    return <SnakeDetail snakes={snakes} />;
-  };
+  //   const handleClick = () => {
+  //     return <SnakeDetail snakes={snakes} />;
+  //   };
 
   return (
     <div>
       <h3>{snakes}</h3>
-      <SnakeDetail snakes={snakes} />
     </div>
   );
 }

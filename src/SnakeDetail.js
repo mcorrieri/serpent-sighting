@@ -1,7 +1,21 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router";
 
-function SnakeDetail({ snakes }) {
-  const [name, sci_name, picture, venomous, max_length, diet] = snakes;
+function SnakeDetail() {
+  const [snakeDetail, setSnakeDetail] = useState([]);
+  const { id } = useParams();
+
+  useEffect(() => {
+    fetch(`http://localhost:3000/snakes/${id}`)
+      .then((res) => res.json())
+      .then((snake) => {
+        setSnakeDetail(snakeDetail);
+        console.log(snakeDetail);
+      });
+  }, [id]);
+
+  const { name, picture, sci_name, venomous, max_length, diet } = snakeDetail;
+
   return (
     <div>
       <h3>{name}</h3>
