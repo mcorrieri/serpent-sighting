@@ -4,6 +4,7 @@ import { Switch, Route } from "react-router-dom";
 import SnakeList from "./SnakeList";
 import SnakeDetail from "./SnakeDetail";
 import Login from "./Login";
+import Signup from "./Signup";
 
 function App() {
   const [user, setUser] = useState([]);
@@ -24,8 +25,11 @@ function App() {
     <div className="App">
       <h2>Maryland Snakes</h2>
       <Switch>
-        <Route path="/">
+        <Route exact path="/">
           <Login user={user} />
+        </Route>
+        <Route exact path="/signup">
+          <Signup user={user} />
         </Route>
         <Route path="/home">
           <SnakeList />

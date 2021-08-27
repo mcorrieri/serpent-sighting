@@ -1,9 +1,9 @@
 import React from "react";
 
-function Login({ user }) {
+function Signup() {
   return (
     <div>
-      <h2>Login</h2>
+      <h2>Signup</h2>
       <form>
         <label>
           <input type="text" placeholder="Username" />
@@ -11,11 +11,10 @@ function Login({ user }) {
         <label>
           <input type="password" placeholder="Password" />
         </label>
-        <button>Login</button>
-        <button>Not a member? Signup</button>
+        <button>Signup</button>
       </form>
     </div>
   );
 }
 
-export default Login;
+export default Signup;
