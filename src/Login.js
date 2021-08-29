@@ -1,18 +1,27 @@
 import React from "react";
+import { useHistory } from "react-router";
 
-function Login({ user }) {
+function Login(user) {
+  let history = useHistory();
+
+  function handleSignup() {
+    history.push("/signup");
+  }
+
+  console.log(user);
+
   return (
     <div>
       <h2>Login</h2>
       <form>
         <label>
-          <input type="text" placeholder="Username" />
+          <input type="text" placeholder="Username" autoComplete="on" />
         </label>
         <label>
-          <input type="password" placeholder="Password" />
+          <input type="password" placeholder="Password" autoComplete="on" />
         </label>
         <button>Login</button>
-        <button>Not a member? Signup</button>
+        <button onClick={handleSignup}>Not a member? Signup</button>
       </form>
     </div>
   );

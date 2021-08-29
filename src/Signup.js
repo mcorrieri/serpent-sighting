@@ -6,10 +6,10 @@ function Signup() {
       <h2>Signup</h2>
       <form>
         <label>
-          <input type="text" placeholder="Username" />
+          <input type="text" placeholder="Username" autoComplete="on" />
         </label>
         <label>
-          <input type="password" placeholder="Password" />
+          <input type="password" placeholder="Password" autoComplete="on" />
         </label>
         <button>Signup</button>
       </form>

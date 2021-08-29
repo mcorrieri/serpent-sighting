@@ -5,6 +5,8 @@ import SnakeList from "./SnakeList";
 import SnakeDetail from "./SnakeDetail";
 import Login from "./Login";
 import Signup from "./Signup";
+import UserInfo from "./UserInfo";
+import Header from "./Header";
 
 function App() {
   const [user, setUser] = useState([]);
@@ -13,8 +15,8 @@ function App() {
     fetch("http://localhost:3000/users")
       .then((res) => res.json())
       .then((data) => {
-        setUser(user);
-        console.log(user);
+        setUser(data.username);
+        console.log(data);
       })
       .catch((error) => {
         console.log(error);
@@ -24,6 +26,7 @@ function App() {
   return (
     <div className="App">
       <h2>Maryland Snakes</h2>
+      <Header />
       <Switch>
         <Route exact path="/">
           <Login user={user} />
@@ -31,11 +34,17 @@ function App() {
         <Route exact path="/signup">
           <Signup user={user} />
         </Route>
-        <Route path="/home">
+        <Route exact path="/home">
           <SnakeList />
+        </Route>
+        <Route exact path="/userinfo">
+          <UserInfo />
         </Route>
         <Route exact path="/snake:id">
           <SnakeDetail />
+        </Route>
+        <Route exact path="*">
+          <h1>404</h1>
         </Route>
       </Switch>
     </div>
