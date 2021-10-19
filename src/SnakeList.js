@@ -20,9 +20,9 @@ function SnakeList() {
     );
   });
 
-  //   const handleClick = () => {
-  //     return <SnakeDetail snakes={snakes} />;
-  //   };
+  const handleClick = () => {
+    return <SnakeDetail snakes={snakes} />;
+  };
 
   return (
     <div>

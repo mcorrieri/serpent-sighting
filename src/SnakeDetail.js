@@ -12,7 +12,7 @@ function SnakeDetail() {
         setSnakeDetail(snakeDetail);
         console.log(snakeDetail);
       });
-  }, [id]);
+  }, [id, snakeDetail]);
 
   const { name, picture, sci_name, venomous, max_length, diet } = snakeDetail;
 

@@ -12,15 +12,19 @@ function App() {
   const [user, setUser] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/users")
-      .then((res) => res.json())
-      .then((data) => {
-        setUser(data.username);
-        console.log(data);
+    const token = localStorage.getItem("token");
+    if (token) {
+      fetch(`http://localhost:3000/users`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
       })
-      .catch((error) => {
-        console.log(error);
-      });
+        .then((res) => res.json())
+        .then((data) => {
+          setUser(data);
+          console.log(data);
+        });
+    }
   }, []);
 
   return (

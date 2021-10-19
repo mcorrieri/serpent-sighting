@@ -8,6 +8,10 @@ function Login(user) {
     history.push("/signup");
   }
 
+  const handleLogin = () => {
+    console.log("LOGIN LOL");
+  };
+
   console.log(user);
 
   return (
@@ -20,7 +24,7 @@ function Login(user) {
         <label>
           <input type="password" placeholder="Password" autoComplete="on" />
         </label>
-        <button>Login</button>
+        <button onClick={handleLogin}>Login</button>
         <button onClick={handleSignup}>Not a member? Signup</button>
       </form>
     </div>
